@@ -1,0 +1,29 @@
+.wrap {
+  display: inline-flex;
+  padding: 3px;
+  background: #2a2a2a;
+  border-radius: 10px;
+  gap: 2px;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  color: #b5b5b5;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.active {
+  background: #3a3a3a;
+  color: #fff;
+}

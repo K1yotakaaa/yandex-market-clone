@@ -12,13 +12,21 @@ export default defineConfig({
         './Header': './src/Header.tsx',
       },
       shared: {
-        react: { singleton: true },
-        'react-dom': { singleton: true },
+        react: { singleton: true, eager: true },
+        'react-dom': { singleton: true, eager: true },
       },
     }),
   ],
-  server: { port: 5001, strictPort: true },
-  preview: { port: 5001, strictPort: true },
+  server: {
+    port: 5001,
+    strictPort: true,
+    cors: true,                          // ← new
+    origin: 'http://localhost:5001',     // ← new
+  },
+  preview: {
+    port: 5001,
+    strictPort: true,
+  },
   base: 'http://localhost:5001/',
   build: { target: 'chrome89' },
 });

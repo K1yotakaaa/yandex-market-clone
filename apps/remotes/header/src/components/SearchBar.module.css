@@ -1,0 +1,78 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 620px;
+  min-width: 0;
+  height: 48px;
+  padding: 4px 4px 4px 16px;
+  background: #1f1f1f;
+  border: 2px solid #fce000;
+  border-radius: 12px;
+  transition: border-color 0.15s;
+}
+
+.wrap:focus-within {
+  border-color: #ffeb3b;
+}
+
+.searchIcon {
+  color: #8a8a8a;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  padding: 0;
+}
+
+.input::placeholder {
+  color: #6b6b6b;
+}
+
+.clear {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: none;
+  color: #8a8a8a;
+  cursor: pointer;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.clear:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.submit {
+  height: 40px;
+  min-width: 120px;
+  padding: 0 24px;
+  background: #fce000;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.submit:hover {
+  background: #ffeb3b;
+}

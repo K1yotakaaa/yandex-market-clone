@@ -1,47 +1,44 @@
+import logo from './assets/logo.png';
+import {
+  HeartIcon,
+  CartIcon,
+  PackageIcon,
+  SparklesIcon,
+  CoinIcon,
+} from './components/icons';
+import { HeaderAction } from './components/HeaderAction';
+import { SearchBar } from './components/SearchBar';
+import { LangSwitcher } from './components/LangSwitcher';
+import styles from './Header.module.css';
+
 export default function Header() {
   return (
-    <header
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 24,
-        padding: '12px 24px',
-        background: '#fff',
-        borderBottom: '1px solid #e5e5e5',
-        fontFamily: 'system-ui, sans-serif',
-      }}
-    >
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <div
-          style={{
-            width: 32, height: 32, borderRadius: '50%',
-            background: '#fce000', display: 'grid', placeItems: 'center',
-            fontWeight: 700, color: '#000',
-          }}
-        >
-          Я
-        </div>
-        <span style={{ fontWeight: 700, fontSize: 20 }}>Marketplace</span>
+    <header className={styles.header}>
+      <div className={styles.left}>
+        <a href="/" className={styles.logoLink} aria-label="Яндекс Маркет">
+          <img src={logo} alt="Яндекс Маркет" className={styles.logo} />
+        </a>
+        <button type="button" className={styles.catalogBtn}>
+          Каталог
+        </button>
       </div>
 
-      <button
-        style={{
-          background: '#fce000', border: 'none', borderRadius: 8,
-          padding: '8px 16px', fontWeight: 600, cursor: 'pointer',
-        }}
-      >
-        Каталог
-      </button>
+      <SearchBar />
 
-      <input
-        placeholder="Найти товары"
-        style={{
-          flex: 1, padding: '10px 16px',
-          border: '2px solid #fce000', borderRadius: 8, outline: 'none',
-        }}
-      />
+      <nav className={styles.actions}>
+        <HeaderAction icon={<CoinIcon size={24} />} label="Призы" />
+        <HeaderAction icon={<PackageIcon size={24} />} label="Заказы" />
+        <HeaderAction icon={<HeartIcon size={24} />} label="Избранное" />
+        <HeaderAction icon={<CartIcon size={24} />} label="Корзина" />
+        <HeaderAction icon={<SparklesIcon size={24} />} label="Market AI" />
+      </nav>
 
-      <span style={{ marginLeft: 'auto', color: '#666' }}>Войти</span>
+      <div className={styles.right}>
+        <LangSwitcher />
+        <button type="button" className={styles.loginBtn}>
+          Войти
+        </button>
+      </div>
     </header>
   );
 }
