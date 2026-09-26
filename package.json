@@ -11,6 +11,7 @@
     "dev": "concurrently -n shell,header -c blue,magenta \"npm:dev:shell\" \"npm:dev:header\"",
     "dev:shell": "npm run dev -w @marketplace/shell",
     "dev:header": "npm run dev -w @marketplace/header",
+    "dev:about": "npm run dev -w @marketplace/about",
     "typecheck": "npm run typecheck -ws --if-present",
     "build": "npm run build -ws --if-present",
     "lint": "npm run lint -ws --if-present"
