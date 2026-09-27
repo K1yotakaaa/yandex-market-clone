@@ -90,19 +90,19 @@ export const PARTNERS: string[] = [
 ];
 
 export const CONTACTS = {
-  email: '',
-  phone: '',
-  phoneHref: '',
-  address: '',
-  hours: '',
+  email: 'team@market-clone.dev',
+  phone: '+7 (700) 123-45-67',
+  phoneHref: '+77001234567',
+  address: 'Алматы, ул. Толе би, 59',
+  hours: 'Пн–Пт, 10:00–19:00',
 };
 
 export type Social = { id: 'telegram' | 'github' | 'vk'; label: string };
 
 export const SOCIALS: Social[] = [
-  { id: 'telegram', label: '' },
-  { id: 'github', label: '' },
-  { id: 'vk', label: '' },
+  { id: 'telegram', label: 'Telegram' },
+  { id: 'github', label: 'GitHub' },
+  { id: 'vk', label: 'ВКонтакте' },
 ];
 
 export type Member = { initials: string; name: string; role: string };

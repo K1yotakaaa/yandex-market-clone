@@ -6,6 +6,7 @@ import { Stats } from './components/Stats';
 import { Directions } from './components/Directions';
 import { Timeline } from './components/Timeline';
 import { Partners } from './components/Partners';
+import { Contacts } from './components/Contacts';
 import styles from './AboutPage.module.css';
 
 const SECTION_IDS = NAV_ITEMS.map((item) => item.id);
@@ -16,13 +17,24 @@ export default function AboutPage() {
   return (
     <div className={styles.page}>
       <AnchorNav items={NAV_ITEMS} active={active} onSelect={scrollTo} />
+
       <main className={styles.main}>
         <Hero onNavigate={scrollTo} />
         <Stats />
         <Directions />
         <Timeline />
         <Partners />
+        <Contacts />
       </main>
+
+      <footer className={styles.footer}>
+        <div className={styles.footerInner}>
+          <span>© 2026 Команда yandex-market-clone</span>
+          <span className={styles.footerMuted}>
+            React · TypeScript · Module Federation
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
