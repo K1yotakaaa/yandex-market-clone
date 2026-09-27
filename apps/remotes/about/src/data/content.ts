@@ -78,7 +78,16 @@ export const MILESTONES: Milestone[] = [
   { year: '2026', title: 'Новая витрина', text: 'Перевели сайт на микрофронтенды.' },
 ];
 
-export const PARTNERS: string[] = [];
+export const PARTNERS: string[] = [
+  'Nordline',
+  'Kobalt',
+  'Vesna',
+  'Orbita',
+  'Polaris',
+  'Mirra',
+  'Tundra',
+  'Lumen',
+];
 
 export const CONTACTS = {
   email: '',

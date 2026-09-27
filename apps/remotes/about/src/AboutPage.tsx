@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
 import { Directions } from './components/Directions';
 import { Timeline } from './components/Timeline';
+import { Partners } from './components/Partners';
 import styles from './AboutPage.module.css';
 
 const SECTION_IDS = NAV_ITEMS.map((item) => item.id);
@@ -20,6 +21,7 @@ export default function AboutPage() {
         <Stats />
         <Directions />
         <Timeline />
+        <Partners />
       </main>
     </div>
   );
