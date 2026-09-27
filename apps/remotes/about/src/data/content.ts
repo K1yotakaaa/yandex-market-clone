@@ -26,10 +26,10 @@ export const HERO = {
 export type Stat = { value: string; unit?: string; label: string };
 
 export const STATS: Stat[] = [
-  { value: '', unit: '', label: '' },
-  { value: '', unit: '', label: '' },
-  { value: '', unit: '', label: '' },
-  { value: '', unit: '', label: '' },
+  { value: '12', unit: 'лет', label: 'работаем на рынке' },
+  { value: '50', unit: 'млн', label: 'покупателей в месяц' },
+  { value: '80', unit: 'тыс.', label: 'продавцов на площадке' },
+  { value: '1 200', label: 'пунктов выдачи' },
 ];
 
 export type DirectionIcon = 'marketplace' | 'logistics' | 'sellers' | 'tech';
