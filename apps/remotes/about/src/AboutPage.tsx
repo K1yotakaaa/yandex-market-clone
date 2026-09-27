@@ -1,3 +1,20 @@
+import { NAV_ITEMS } from './data/content';
+import { useActiveSection } from './hooks/useActiveSection';
+import { AnchorNav } from './components/AnchorNav';
+import { Hero } from './components/Hero';
+import styles from './AboutPage.module.css';
+
+const SECTION_IDS = NAV_ITEMS.map((item) => item.id);
+
 export default function AboutPage() {
-  return <h1>О компании — работает!</h1>;
+  const { active, scrollTo } = useActiveSection(SECTION_IDS);
+
+  return (
+    <div className={styles.page}>
+      <AnchorNav items={NAV_ITEMS} active={active} onSelect={scrollTo} />
+      <main className={styles.main}>
+        <Hero onNavigate={scrollTo} />
+      </main>
+    </div>
+  );
 }

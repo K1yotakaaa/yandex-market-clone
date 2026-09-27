@@ -7,19 +7,20 @@ export type SectionId =
   | 'contacts';
 
 export const NAV_ITEMS: { id: SectionId; label: string }[] = [
-  { id: 'mission', label: '' },
-  { id: 'numbers', label: '' },
-  { id: 'directions', label: '' },
-  { id: 'history', label: '' },
-  { id: 'partners', label: '' },
-  { id: 'contacts', label: '' },
+  { id: 'mission', label: 'mission' },
+  { id: 'numbers', label: 'numbers' },
+  { id: 'directions', label: 'directions' },
+  { id: 'history', label: 'history' },
+  { id: 'partners', label: 'partners' },
+  { id: 'contacts', label: 'contacts' },
 ];
 
 export const HERO = {
-  eyebrow: '',
-  titleStart: '',
-  titleAccent: '',
-  description: '',
+  eyebrow: 'О компании',
+  titleStart: 'Маркет, где удобно',
+  titleAccent: 'покупать и продавать',
+  description:
+    'Помогаем людям быстро находить нужные товары по честной цене, а продавцам — выходить к покупателям по всей стране.',
 };
 
 export type Stat = { value: string; unit?: string; label: string };
