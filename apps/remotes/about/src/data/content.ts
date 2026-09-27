@@ -42,10 +42,30 @@ export type Direction = {
 };
 
 export const DIRECTIONS: Direction[] = [
-  { icon: 'marketplace', title: '', description: '', tags: [] },
-  { icon: 'logistics', title: '', description: '', tags: [] },
-  { icon: 'sellers', title: '', description: '', tags: [] },
-  { icon: 'tech', title: '', description: '', tags: [] },
+  {
+    icon: 'marketplace',
+    title: 'Маркетплейс',
+    description: 'Каталог из миллионов товаров, отзывы покупателей и сравнение цен у разных продавцов.',
+    tags: ['Каталог', 'Отзывы', 'Сравнение'],
+  },
+  {
+    icon: 'logistics',
+    title: 'Логистика',
+    description: 'Свои склады, сортировочные центры и пункты выдачи. Большую часть заказов привозим за 1–2 дня.',
+    tags: ['Склады', 'Курьеры', 'ПВЗ'],
+  },
+  {
+    icon: 'sellers',
+    title: 'Для бизнеса',
+    description: 'Личный кабинет продавца со статистикой продаж, рекламой внутри площадки и быстрыми выплатами.',
+    tags: ['Аналитика', 'Реклама', 'Выплаты'],
+  },
+  {
+    icon: 'tech',
+    title: 'Технологии',
+    description: 'Персональные рекомендации, поиск по фото и ассистент, который подбирает товар по описанию задачи.',
+    tags: ['Поиск', 'ML', 'Market AI'],
+  },
 ];
 
 export type Milestone = { year: string; title: string; text: string };

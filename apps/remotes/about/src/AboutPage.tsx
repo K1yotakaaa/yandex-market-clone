@@ -3,6 +3,7 @@ import { useActiveSection } from './hooks/useActiveSection';
 import { AnchorNav } from './components/AnchorNav';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
+  import { Directions } from './components/Directions';
 import styles from './AboutPage.module.css';
 
 const SECTION_IDS = NAV_ITEMS.map((item) => item.id);
@@ -16,6 +17,7 @@ export default function AboutPage() {
       <main className={styles.main}>
         <Hero onNavigate={scrollTo} />
         <Stats />
+        <Directions />
       </main>
     </div>
   );
