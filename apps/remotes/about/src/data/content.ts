@@ -71,11 +71,11 @@ export const DIRECTIONS: Direction[] = [
 export type Milestone = { year: string; title: string; text: string };
 
 export const MILESTONES: Milestone[] = [
-  { year: '', title: '', text: '' },
-  { year: '', title: '', text: '' },
-  { year: '', title: '', text: '' },
-  { year: '', title: '', text: '' },
-  { year: '', title: '', text: '' },
+  { year: '2014', title: 'Запуск', text: 'Первая версия сервиса для сравнения цен в интернет-магазинах.' },
+  { year: '2018', title: 'Маркетплейс', text: 'Продавцы начали размещать товары напрямую.' },
+  { year: '2021', title: 'Своя доставка', text: 'Открыли первые склады и сеть пунктов выдачи.' },
+  { year: '2024', title: 'Market AI', text: 'Появился ассистент, который помогает с выбором.' },
+  { year: '2026', title: 'Новая витрина', text: 'Перевели сайт на микрофронтенды.' },
 ];
 
 export const PARTNERS: string[] = [];
