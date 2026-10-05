@@ -67,14 +67,16 @@ export function Contacts() {
 
           <div className={styles.socials}>
             {SOCIALS.map((social) => (
-              <button
+              <a
                 key={social.id}
-                type="button"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.social}
               >
                 {SOCIAL_ICONS[social.id]}
                 {social.label}
-              </button>
+              </a>
             ))}
           </div>
         </div>
@@ -90,7 +92,9 @@ export function Contacts() {
                 </span>
                 <span className={styles.memberBody}>
                   <span className={styles.memberName}>{member.name}</span>
+                  {member.role && (
                   <span className={styles.memberRole}>{member.role}</span>
+                  )}
                 </span>
               </li>
             ))}

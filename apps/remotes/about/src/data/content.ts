@@ -7,12 +7,12 @@ export type SectionId =
   | 'contacts';
 
 export const NAV_ITEMS: { id: SectionId; label: string }[] = [
-  { id: 'mission', label: 'mission' },
-  { id: 'numbers', label: 'numbers' },
-  { id: 'directions', label: 'directions' },
-  { id: 'history', label: 'history' },
-  { id: 'partners', label: 'partners' },
-  { id: 'contacts', label: 'contacts' },
+  { id: 'mission', label: 'Миссия' },
+  { id: 'numbers', label: 'Цифры' },
+  { id: 'directions', label: 'Направления' },
+  { id: 'history', label: 'История' },
+  { id: 'partners', label: 'Партнёры' },
+  { id: 'contacts', label: 'Контакты' },
 ];
 
 export const HERO = {
@@ -97,17 +97,25 @@ export const CONTACTS = {
   hours: 'Пн–Пт, 10:00–19:00',
 };
 
-export type Social = { id: 'telegram' | 'github' | 'vk'; label: string };
+export type Social = {
+  id: 'telegram' | 'github' | 'vk';
+  label: string;
+  href: string;
+};
 
 export const SOCIALS: Social[] = [
-  { id: 'telegram', label: 'Telegram' },
-  { id: 'github', label: 'GitHub' },
-  { id: 'vk', label: 'ВКонтакте' },
+  { id: 'telegram', label: 'Telegram', href: 'https://telegram.org' },
+  {
+    id: 'github',
+    label: 'GitHub',
+    href: 'https://github.com/K1yotakaaa/yandex-market-clone',
+  },
+  { id: 'vk', label: 'ВКонтакте', href: 'https://vk.com' },
 ];
 
-export type Member = { initials: string; name: string; role: string };
+export type Member = { initials: string; name: string; role?: string };
 
-  export const TEAM: Member[] = [
-    { initials: 'IZ', name: 'izyjin', role: '' },
-    { initials: 'K', name: 'Kuro', role: 'Shell' },
-  ];
+export const TEAM: Member[] = [
+  { initials: 'IZ', name: 'izyjin', role: 'About · дизайн и вёрстка' },
+  { initials: 'K', name: 'Kuro', role: 'Shell' },
+];

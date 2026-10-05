@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently -n shell,header -c blue,magenta \"npm:dev:shell\" \"npm:dev:header\"",
+    "dev": "concurrently -n shell,header,about -c blue,magenta,green \"npm:dev:shell\" \"npm:dev:header\" \"npm:dev:about\"",
     "dev:shell": "npm run dev -w @marketplace/shell",
     "dev:header": "npm run dev -w @marketplace/header",
     "dev:about": "npm run dev -w @marketplace/about",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "concurrently": "^9.0.0",
-    "typescript": "^5.6.0"
+    "typescript": "~6.0.2"
   },
   "engines": {
     "node": ">=20"
