@@ -1,0 +1,103 @@
+.list {
+  position: relative;
+  display: grid;
+  gap: 28px;
+  margin: 0;
+  padding: 28px 24px 28px 56px;
+  border-radius: var(--ym-radius-l);
+  background: var(--ym-card);
+  box-shadow: var(--ym-shadow);
+  list-style: none;
+}
+
+.list::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 31px;
+  width: 2px;
+  background: var(--ym-line);
+}
+
+.item {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  top: 5px;
+  left: -32px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ym-card);
+  border: 3px solid var(--ym-text);
+}
+
+.current .dot {
+  background: var(--ym-yellow);
+  border-color: var(--ym-yellow);
+  box-shadow: 0 0 0 6px rgba(252, 224, 0, 0.3);
+}
+
+.year {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.text {
+  margin: 0;
+  color: var(--ym-text-2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.current .year {
+  display: inline-block;
+  padding: 0 6px;
+  margin-left: -6px;
+  border-radius: 6px;
+  background: var(--ym-yellow);
+  color: var(--ym-ink);
+}
+
+@media (min-width: 900px) {
+  .list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    padding: 40px;
+  }
+
+  .list::before {
+    top: 47px;
+    bottom: auto;
+    left: 40px;
+    right: 40px;
+    width: auto;
+    height: 2px;
+  }
+
+  .item {
+    padding-top: 36px;
+  }
+
+  .dot {
+    top: 0;
+    left: 0;
+  }
+
+  .year {
+    font-size: 28px;
+  }
+}

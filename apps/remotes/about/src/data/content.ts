@@ -1,0 +1,121 @@
+export type SectionId =
+  | 'mission'
+  | 'numbers'
+  | 'directions'
+  | 'history'
+  | 'partners'
+  | 'contacts';
+
+export const NAV_ITEMS: { id: SectionId; label: string }[] = [
+  { id: 'mission', label: 'Миссия' },
+  { id: 'numbers', label: 'Цифры' },
+  { id: 'directions', label: 'Направления' },
+  { id: 'history', label: 'История' },
+  { id: 'partners', label: 'Партнёры' },
+  { id: 'contacts', label: 'Контакты' },
+];
+
+export const HERO = {
+  eyebrow: 'О компании',
+  titleStart: 'Маркет, где удобно',
+  titleAccent: 'покупать и продавать',
+  description:
+    'Помогаем людям быстро находить нужные товары по честной цене, а продавцам — выходить к покупателям по всей стране.',
+};
+
+export type Stat = { value: string; unit?: string; label: string };
+
+export const STATS: Stat[] = [
+  { value: '12', unit: 'лет', label: 'работаем на рынке' },
+  { value: '50', unit: 'млн', label: 'покупателей в месяц' },
+  { value: '80', unit: 'тыс.', label: 'продавцов на площадке' },
+  { value: '1 200', label: 'пунктов выдачи' },
+];
+
+export type DirectionIcon = 'marketplace' | 'logistics' | 'sellers' | 'tech';
+
+export type Direction = {
+  icon: DirectionIcon;
+  title: string;
+  description: string;
+  tags: string[];
+};
+
+export const DIRECTIONS: Direction[] = [
+  {
+    icon: 'marketplace',
+    title: 'Маркетплейс',
+    description: 'Каталог из миллионов товаров, отзывы покупателей и сравнение цен у разных продавцов.',
+    tags: ['Каталог', 'Отзывы', 'Сравнение'],
+  },
+  {
+    icon: 'logistics',
+    title: 'Логистика',
+    description: 'Свои склады, сортировочные центры и пункты выдачи. Большую часть заказов привозим за 1–2 дня.',
+    tags: ['Склады', 'Курьеры', 'ПВЗ'],
+  },
+  {
+    icon: 'sellers',
+    title: 'Для бизнеса',
+    description: 'Личный кабинет продавца со статистикой продаж, рекламой внутри площадки и быстрыми выплатами.',
+    tags: ['Аналитика', 'Реклама', 'Выплаты'],
+  },
+  {
+    icon: 'tech',
+    title: 'Технологии',
+    description: 'Персональные рекомендации, поиск по фото и ассистент, который подбирает товар по описанию задачи.',
+    tags: ['Поиск', 'ML', 'Market AI'],
+  },
+];
+
+export type Milestone = { year: string; title: string; text: string };
+
+export const MILESTONES: Milestone[] = [
+  { year: '2014', title: 'Запуск', text: 'Первая версия сервиса для сравнения цен в интернет-магазинах.' },
+  { year: '2018', title: 'Маркетплейс', text: 'Продавцы начали размещать товары напрямую.' },
+  { year: '2021', title: 'Своя доставка', text: 'Открыли первые склады и сеть пунктов выдачи.' },
+  { year: '2024', title: 'Market AI', text: 'Появился ассистент, который помогает с выбором.' },
+  { year: '2026', title: 'Новая витрина', text: 'Перевели сайт на микрофронтенды.' },
+];
+
+export const PARTNERS: string[] = [
+  'Nordline',
+  'Kobalt',
+  'Vesna',
+  'Orbita',
+  'Polaris',
+  'Mirra',
+  'Tundra',
+  'Lumen',
+];
+
+export const CONTACTS = {
+  email: 'team@market-clone.dev',
+  phone: '+7 (700) 123-45-67',
+  phoneHref: '+77001234567',
+  address: 'Алматы, ул. Толе би, 59',
+  hours: 'Пн–Пт, 10:00–19:00',
+};
+
+export type Social = {
+  id: 'telegram' | 'github' | 'vk';
+  label: string;
+  href: string;
+};
+
+export const SOCIALS: Social[] = [
+  { id: 'telegram', label: 'Telegram', href: 'https://telegram.org' },
+  {
+    id: 'github',
+    label: 'GitHub',
+    href: 'https://github.com/K1yotakaaa/yandex-market-clone',
+  },
+  { id: 'vk', label: 'ВКонтакте', href: 'https://vk.com' },
+];
+
+export type Member = { initials: string; name: string; role?: string };
+
+export const TEAM: Member[] = [
+  { initials: 'IZ', name: 'izyjin', role: 'About · дизайн и вёрстка' },
+  { initials: 'K', name: 'Kuro', role: 'Shell' },
+];

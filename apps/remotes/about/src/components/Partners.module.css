@@ -1,0 +1,52 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  --partner-mark: var(--ym-partner-mark);
+
+  display: grid;
+  place-items: center;
+  height: 96px;
+  padding: 0 16px;
+  border-radius: var(--ym-radius-m);
+  background: var(--ym-card);
+  color: var(--ym-text-3);
+  box-shadow: var(--ym-shadow);
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+  --partner-mark: var(--ym-yellow);
+
+  color: var(--ym-text);
+  background: var(--ym-card-hover);
+  box-shadow: var(--ym-shadow-hover);
+}
+
+.logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 24px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .tile {
+    height: 120px;
+  }
+
+  .logo {
+    height: 28px;
+  }
+}
