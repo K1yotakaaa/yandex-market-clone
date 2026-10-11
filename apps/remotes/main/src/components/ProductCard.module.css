@@ -1,0 +1,154 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 1;
+  background: #eceff2;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: box-shadow 0.25s ease;
+}
+
+.card:hover .imageWrap {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #ff3b30;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+
+.fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(15, 15, 15, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.fav:hover {
+  background: rgba(15, 15, 15, 0.78);
+  transform: scale(1.08);
+}
+
+.favActive {
+  color: #ff3b30;
+}
+
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 2px 4px;
+  min-height: 120px;
+}
+
+.title {
+  margin: 0;
+  color: #fff;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: calc(14px * 1.35 * 2);
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.price {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.priceStruck {
+  color: #8a8a8a;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d0d0d0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tagGold {
+  background: rgba(252, 224, 0, 0.14);
+  color: #fce000;
+}
