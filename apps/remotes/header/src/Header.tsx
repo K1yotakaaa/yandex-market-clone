@@ -3,8 +3,8 @@ import {
   HeartIcon,
   CartIcon,
   PackageIcon,
-  SparklesIcon,
   CoinIcon,
+  InfoIcon,
 } from './components/icons';
 import { HeaderAction } from './components/HeaderAction';
 import { SearchBar } from './components/SearchBar';
@@ -30,7 +30,7 @@ export default function Header() {
         <HeaderAction icon={<PackageIcon size={24} />} label="Заказы" />
         <HeaderAction icon={<HeartIcon size={24} />} label="Избранное" />
         <HeaderAction icon={<CartIcon size={24} />} label="Корзина" />
-        <HeaderAction icon={<SparklesIcon size={24} />} label="Market AI" />
+        <HeaderAction icon={<InfoIcon size={24} />} label="О компании" href="#about" />
       </nav>
 
       <div className={styles.right}>
