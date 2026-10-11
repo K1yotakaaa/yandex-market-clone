@@ -13,6 +13,16 @@ export default defineConfig({
           name: 'header',
           entry: 'http://localhost:5001/remoteEntry.js',
         },
+        main: {
+          type: 'module',
+          name: 'main',
+          entry: 'http://localhost:5002/remoteEntry.js',
+        },
+        about: {
+          type: 'module',
+          name: 'about',
+          entry: 'http://localhost:5017/remoteEntry.js',
+        },
       },
       shared: {
         react: { singleton: true },
