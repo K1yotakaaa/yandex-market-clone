@@ -11,6 +11,7 @@
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s;
+  text-decoration: none;
 }
 
 .action:hover {

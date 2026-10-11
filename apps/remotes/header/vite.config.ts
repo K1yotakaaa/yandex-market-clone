@@ -20,8 +20,8 @@ export default defineConfig({
   server: {
     port: 5001,
     strictPort: true,
-    cors: true,                          // ← new
-    origin: 'http://localhost:5001',     // ← new
+    cors: true,
+    origin: 'http://localhost:5001',
   },
   preview: {
     port: 5001,

@@ -1,0 +1,10 @@
+.page {
+  min-height: 100vh;
+  background: #1a1a1a;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
