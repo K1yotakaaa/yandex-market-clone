@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useUserStore } from '@marketplace/shared-state';
 import type { Product } from '@marketplace/shared-types';
 import { HeartIcon } from './icons';
 import styles from './ProductCard.module.css';
@@ -7,7 +7,9 @@ const formatPrice = (value: number) =>
   value.toLocaleString('ru-RU') + ' ₽';
 
 export function ProductCard({ product }: { product: Product }) {
-  const [fav, setFav] = useState(false);
+  const favorites = useUserStore((s) => s.favorites);
+  const toggleFavorite = useUserStore((s) => s.toggleFavorite);
+  const fav = favorites.includes(product.oskuId);
 
   const discountBadge = product.featureBadges?.find(
     (b) => b.badgeType === 'SIMPLEDiscountTokenType',
@@ -32,14 +34,14 @@ export function ProductCard({ product }: { product: Product }) {
       }}
     >
       <div className={styles.imageWrap}>
-        {product.image ? (
+        {product.image && (
           <img
             src={product.image}
             alt={product.title}
             className={styles.image}
             loading="lazy"
           />
-        ) : null}
+        )}
 
         {discountBadge && (
           <span className={styles.badge}>{discountBadge.badgeTitle}</span>
@@ -52,7 +54,7 @@ export function ProductCard({ product }: { product: Product }) {
           aria-pressed={fav}
           onClick={(event) => {
             event.stopPropagation();
-            setFav((v) => !v);
+            toggleFavorite(product.oskuId);
           }}
         >
           <HeartIcon size={30} />
