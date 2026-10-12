@@ -28,6 +28,11 @@ export default defineConfig({
           name: 'product', 
           entry: 'http://localhost:5004/remoteEntry.js' 
         },
+        auth: { 
+          type: 'module', 
+          name: 'auth', 
+          entry: 'http://localhost:5005/remoteEntry.js' 
+        },
         about: {
           type: 'module',
           name: 'about',
@@ -37,6 +42,7 @@ export default defineConfig({
       shared: {
         react: { singleton: true },
         'react-dom': { singleton: true },
+        '@marketplace/shared-state': { singleton: true },
       },
     }),
   ],

@@ -22,6 +22,12 @@ declare module 'product/ProductPage' {
   export default ProductPage;
 }
 
+declare module 'auth/AuthPage' {
+  import type { ComponentType } from 'react';
+  const AuthPage: ComponentType;
+  export default AuthPage;
+}
+
 declare module 'about/AboutPage' {
   import type { ComponentType } from 'react';
   const AboutPage: ComponentType;
