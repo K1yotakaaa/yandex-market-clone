@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { BANNERS, type Banner } from '../data/mock';
+import { BANNERS, type Banner } from '@marketplace/shared-types';
 import styles from './PromoBanners.module.css';
 
 const COPIES = 3;

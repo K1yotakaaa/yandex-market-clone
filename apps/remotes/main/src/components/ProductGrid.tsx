@@ -1,4 +1,4 @@
-import { PRODUCTS } from '../data/mock';
+import { PRODUCTS } from '@marketplace/shared-types';
 import { ProductCard } from './ProductCard';
 import styles from './ProductGrid.module.css';
 

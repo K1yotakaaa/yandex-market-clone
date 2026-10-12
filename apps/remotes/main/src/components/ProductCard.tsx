@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Product } from '../data/mock';
+import type { Product } from '@marketplace/shared-types';
 import { HeartIcon } from './icons';
 import styles from './ProductCard.module.css';
 
@@ -25,7 +25,12 @@ export function ProductCard({ product }: { product: Product }) {
     !!discountBadge || (!!product.additionalPrices && product.additionalPrices.length > 0);
 
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      onClick={() => {
+        window.location.hash = `#product/${product.oskuId}`;
+      }}
+    >
       <div className={styles.imageWrap}>
         {product.image ? (
           <img
@@ -45,7 +50,10 @@ export function ProductCard({ product }: { product: Product }) {
           className={`${styles.fav} ${fav ? styles.favActive : ''}`}
           aria-label="В избранное"
           aria-pressed={fav}
-          onClick={() => setFav((v) => !v)}
+          onClick={(event) => {
+            event.stopPropagation();
+            setFav((v) => !v);
+          }}
         >
           <HeartIcon size={30} />
         </button>

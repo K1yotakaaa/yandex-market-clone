@@ -1,4 +1,4 @@
-import { CATEGORY_STRIP } from '../data/mock';
+import { CATEGORY_STRIP } from '@marketplace/shared-types';
 import styles from './CategoryStrip.module.css';
 
 export function CategoryStrip() {
