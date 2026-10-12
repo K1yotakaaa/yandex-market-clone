@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useUserStore } from '@marketplace/shared-state';
 import type { Product } from '@marketplace/shared-types';
 import { CompareIcon, HeartIcon, ShareIcon } from './icons';
 import styles from './BuyPanel.module.css';
@@ -6,7 +6,15 @@ import styles from './BuyPanel.module.css';
 const formatPrice = (v: number) => v.toLocaleString('ru-RU') + ' ₽';
 
 export function BuyPanel({ product }: { product: Product }) {
-  const [inCart, setInCart] = useState(false);
+  const favorites = useUserStore((s) => s.favorites);
+  const toggleFavorite = useUserStore((s) => s.toggleFavorite);
+  const addToCart = useUserStore((s) => s.addToCart);
+  const cartItem = useUserStore((s) =>
+    s.cart.find((i) => i.oskuId === product.oskuId),
+  );
+
+  const fav = favorites.includes(product.oskuId);
+  const inCart = !!cartItem;
 
   const yaBankPrice = product.additionalPrices?.find(
     (p) => p.priceType === 'yaBank',
@@ -56,13 +64,23 @@ export function BuyPanel({ product }: { product: Product }) {
       </div>
 
       <div className={styles.actions}>
-        <button type="button" className={styles.buyNow}>
+        <button
+          type="button"
+          className={styles.buyNow}
+          onClick={() => {
+            addToCart(product.oskuId);
+            window.location.hash = '#cart';
+          }}
+        >
           Купить сейчас
         </button>
         <button
           type="button"
           className={inCart ? `${styles.cart} ${styles.cartActive}` : styles.cart}
-          onClick={() => setInCart((v) => !v)}
+          onClick={() => {
+            if (!inCart) addToCart(product.oskuId);
+            else window.location.hash = '#cart';
+          }}
         >
           {inCart ? 'В корзине' : 'В корзину'}
         </button>
@@ -73,9 +91,13 @@ export function BuyPanel({ product }: { product: Product }) {
           <CompareIcon size={16} />
           Сравнить
         </button>
-        <button type="button" className={styles.linkBtn}>
+        <button
+          type="button"
+          className={fav ? `${styles.linkBtn} ${styles.linkBtnFav}` : styles.linkBtn}
+          onClick={() => toggleFavorite(product.oskuId)}
+        >
           <HeartIcon size={16} />
-          В избранное
+          {fav ? 'В избранном' : 'В избранное'}
         </button>
         <button type="button" className={styles.linkBtn}>
           <ShareIcon size={16} />
