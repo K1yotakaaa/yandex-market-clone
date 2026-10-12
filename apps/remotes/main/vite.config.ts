@@ -12,6 +12,7 @@ export default defineConfig({
         './MainPage': './src/MainPage.tsx',
       },
       shared: {
+        '@marketplace/shared-state': { singleton: true },
         react: { singleton: true, eager: true },
         'react-dom': { singleton: true, eager: true },
       },

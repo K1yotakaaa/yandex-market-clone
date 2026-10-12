@@ -78,3 +78,51 @@
 .loginBtn:hover {
   background: #3a3a3a;
 }
+
+.userBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 14px 0 6px;
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.userBtn:hover {
+  background: #3a3a3a;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.userInitial {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fce000;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.userName {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

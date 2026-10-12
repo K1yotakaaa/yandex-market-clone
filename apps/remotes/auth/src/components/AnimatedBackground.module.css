@@ -1,0 +1,84 @@
+.wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sphere1,
+.sphere2,
+.sphere3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: moveSphere 20s infinite ease-in-out;
+}
+
+.sphere1 {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(45deg, #ff3366, #ff6b3d);
+  top: -300px;
+  left: -300px;
+  animation-delay: -5s;
+}
+
+.sphere2 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(45deg, #4433ff, #3dceff);
+  bottom: -250px;
+  right: -250px;
+  animation-delay: -2s;
+}
+
+.sphere3 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, #7400ff, #ff00d4);
+  top: 50%;
+  left: 30%;
+  animation-delay: -8s;
+}
+
+@keyframes moveSphere {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(100px, 50px) rotate(90deg) scale(1.1); }
+  50% { transform: translate(50px, 100px) rotate(180deg) scale(1); }
+  75% { transform: translate(-50px, 50px) rotate(270deg) scale(0.9); }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  bottom: -10vh;
+  animation-name: floatParticle;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  opacity: 0;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1);
+    opacity: 0;
+  }
+}
