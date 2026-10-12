@@ -131,8 +131,9 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 4px;
-  height: 20px;
   overflow: hidden;
+  flex: 1;
+  min-width: 0;
 }
 
 .tag {
@@ -151,4 +152,40 @@
 .tagGold {
   background: rgba(252, 224, 0, 0.14);
   color: #fce000;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 20px;
+}
+
+.cartBtn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: #fce000;
+  border: none;
+  border-radius: 10px;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.cartBtn:hover {
+  background: #ffeb3b;
+  transform: scale(1.05);
+}
+
+.cartBtnIn {
+  background: #2e2e2e;
+  color: #fce000;
+}
+
+.cartBtnIn:hover {
+  background: #3a3a3a;
 }

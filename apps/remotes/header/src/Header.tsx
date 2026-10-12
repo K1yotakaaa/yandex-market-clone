@@ -16,6 +16,9 @@ export default function Header() {
   const user = useAuthStore((s) => s.user);
   const avatar = useUserStore((s) => s.avatar);
   const favoritesCount = useUserStore((s) => s.favorites.length);
+  const cartCount = useUserStore((s) =>
+    s.cart.reduce((sum, item) => sum + item.qty, 0),
+  );
 
   const goToAccount = () => {
     window.location.hash = user ? '#profile' : '#auth';
@@ -36,15 +39,25 @@ export default function Header() {
 
       <nav className={styles.actions}>
         <HeaderAction icon={<CoinIcon size={24} />} label="Призы" />
-        <HeaderAction icon={<PackageIcon size={24} />} label="Заказы" />
+        <HeaderAction
+          icon={<PackageIcon size={24} />}
+          label="Заказы"
+          onClick={goToAccount}
+        />
         <HeaderAction
           icon={<HeartIcon size={24} />}
           label={favoritesCount > 0 ? `Избранное · ${favoritesCount}` : 'Избранное'}
           onClick={() => {
-            window.location.hash = user ? '#profile' : '#auth';
+            window.location.hash = '#favorites';
           }}
         />
-        <HeaderAction icon={<CartIcon size={24} />} label="Корзина" />
+        <HeaderAction
+          icon={<CartIcon size={24} />}
+          label={cartCount > 0 ? `Корзина · ${cartCount}` : 'Корзина'}
+          onClick={() => {
+            window.location.hash = '#cart';
+          }}
+        />
         <HeaderAction icon={<SparklesIcon size={24} />} label="Market AI" />
       </nav>
 

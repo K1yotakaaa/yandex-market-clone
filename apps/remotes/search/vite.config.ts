@@ -14,6 +14,8 @@ export default defineConfig({
       shared: {
         react: { singleton: true, eager: true },
         'react-dom': { singleton: true, eager: true },
+        '@marketplace/shared-state': { singleton: true },
+        '@marketplace/shared-types': { singleton: true },
       },
     }),
   ],

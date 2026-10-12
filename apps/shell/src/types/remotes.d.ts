@@ -28,6 +28,18 @@ declare module 'auth/AuthPage' {
   export default AuthPage;
 }
 
+declare module 'cart/CartPage' {
+  import type { ComponentType } from 'react';
+  const CartPage: ComponentType;
+  export default CartPage;
+}
+
+declare module 'cart/FavoritesPage' {
+  import type { ComponentType } from 'react';
+  const FavoritesPage: ComponentType;
+  export default FavoritesPage;
+}
+
 declare module 'about/AboutPage' {
   import type { ComponentType } from 'react';
   const AboutPage: ComponentType;

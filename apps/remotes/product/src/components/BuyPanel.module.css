@@ -142,6 +142,15 @@
   color: #fff;
 }
 
+.linkBtnFav {
+  color: #ff3b30;
+}
+
+.linkBtnFav:hover {
+  background: rgba(255, 59, 48, 0.08);
+  color: #ff5c52;
+}
+
 .info {
   display: flex;
   flex-direction: column;

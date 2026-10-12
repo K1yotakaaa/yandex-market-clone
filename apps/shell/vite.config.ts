@@ -33,6 +33,11 @@ export default defineConfig({
           name: 'auth', 
           entry: 'http://localhost:5005/remoteEntry.js' 
         },
+        cart: { 
+          type: 'module', 
+          name: 'cart', 
+          entry: 'http://localhost:5006/remoteEntry.js' 
+        },
         about: {
           type: 'module',
           name: 'about',

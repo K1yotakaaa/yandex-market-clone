@@ -1,6 +1,6 @@
 import { useUserStore } from '@marketplace/shared-state';
 import type { Product } from '@marketplace/shared-types';
-import { HeartIcon } from './icons';
+import { CartIcon, HeartIcon } from './icons';
 import styles from './ProductCard.module.css';
 
 const formatPrice = (value: number) =>
@@ -9,6 +9,11 @@ const formatPrice = (value: number) =>
 export function ProductCard({ product }: { product: Product }) {
   const favorites = useUserStore((s) => s.favorites);
   const toggleFavorite = useUserStore((s) => s.toggleFavorite);
+  const addToCart = useUserStore((s) => s.addToCart);
+  const inCart = useUserStore((s) =>
+    s.cart.some((i) => i.oskuId === product.oskuId),
+  );
+
   const fav = favorites.includes(product.oskuId);
 
   const discountBadge = product.featureBadges?.find(
@@ -76,18 +81,32 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </div>
 
-        <div className={styles.meta}>
-          {originalBadge && (
-            <span className={`${styles.tag} ${styles.tagGold}`}>
-              {originalBadge.badgeTitle}
-            </span>
-          )}
-          {hasDiscount && !originalBadge && (
-            <span className={styles.tag}>Скидка</span>
-          )}
-          {crossBorder && (
-            <span className={styles.tag}>{crossBorder.title}</span>
-          )}
+        <div className={styles.footer}>
+          <div className={styles.meta}>
+            {originalBadge && (
+              <span className={`${styles.tag} ${styles.tagGold}`}>
+                {originalBadge.badgeTitle}
+              </span>
+            )}
+            {hasDiscount && !originalBadge && (
+              <span className={styles.tag}>Скидка</span>
+            )}
+            {crossBorder && (
+              <span className={styles.tag}>{crossBorder.title}</span>
+            )}
+          </div>
+
+          <button
+            type="button"
+            className={inCart ? `${styles.cartBtn} ${styles.cartBtnIn}` : styles.cartBtn}
+            aria-label={inCart ? 'В корзине' : 'В корзину'}
+            onClick={(event) => {
+              event.stopPropagation();
+              addToCart(product.oskuId);
+            }}
+          >
+            <CartIcon size={18} />
+          </button>
         </div>
       </div>
     </article>
