@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { DeliveryMethod, Product } from '@marketplace/shared-types';
+import { useAuthStore } from '@marketplace/shared-state';
 import {
   DEFAULT_FILTERS,
   getAvailableAttributeValues,
@@ -87,6 +88,8 @@ function AttributeSection({
 }
 
 export function FilterSidebar({ filters, onChange, products }: Props) {
+  const user = useAuthStore((s) => s.user);
+
   const update = <K extends keyof Filters>(key: K, value: Filters[K]) =>
     onChange({ ...filters, [key]: value });
 
@@ -136,20 +139,28 @@ export function FilterSidebar({ filters, onChange, products }: Props) {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.loginCard}>
-        <div className={styles.loginRow}>
-          <span className={styles.loginIcon} aria-hidden="true">
-            <UserIcon />
-          </span>
-          <div className={styles.loginText}>
-            <p className={styles.loginTitle}>Войдите, и станет дешевле</p>
-            <p className={styles.loginSubtitle}>В аккаунте доступны скидки</p>
+      {!user && (
+        <div className={styles.loginCard}>
+          <div className={styles.loginRow}>
+            <span className={styles.loginIcon} aria-hidden="true">
+              <UserIcon />
+            </span>
+            <div className={styles.loginText}>
+              <p className={styles.loginTitle}>Войдите, и станет дешевле</p>
+              <p className={styles.loginSubtitle}>В аккаунте доступны скидки</p>
+            </div>
           </div>
+          <button
+            type="button"
+            className={styles.loginBtn}
+            onClick={() => {
+              window.location.hash = '#auth';
+            }}
+          >
+            Войти
+          </button>
         </div>
-        <button type="button" className={styles.loginBtn}>
-          Войти
-        </button>
-      </div>
+      )}
 
       <FilterSection title="Цена, ₽">
         <div className={styles.priceRow}>
