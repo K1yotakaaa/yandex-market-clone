@@ -18,6 +18,16 @@ export default defineConfig({
           name: 'main',
           entry: 'http://localhost:5002/remoteEntry.js',
         },
+        search: {
+          type: 'module',
+          name: 'search',
+          entry: 'http://localhost:5003/remoteEntry.js',
+        },
+        product: { 
+          type: 'module', 
+          name: 'product', 
+          entry: 'http://localhost:5004/remoteEntry.js' 
+        },
         about: {
           type: 'module',
           name: 'about',
