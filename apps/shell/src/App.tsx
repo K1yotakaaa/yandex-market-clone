@@ -8,6 +8,8 @@ const SearchPage = lazy(() => import('search/SearchPage'));
 const ProductPage = lazy(() => import('product/ProductPage'));
 const AuthPage = lazy(() => import('auth/AuthPage'));
 const AboutPage = lazy(() => import('about/AboutPage'));
+const CartPage = lazy(() => import('cart/CartPage'));
+const FavoritesPage = lazy(() => import('cart/FavoritesPage'));
 
 function useHashRoute() {
   const [hash, setHash] = useState(() => window.location.hash);
@@ -34,6 +36,8 @@ export default function App() {
   const isAbout = hash === '#about';
   const isAuth = hash === '#auth';
   const isProfile = hash === '#profile';
+  const isCart = hash === '#cart';
+  const isFavorites = hash === '#favorites';
   const searchMatch = hash.match(/^#search\?q=(.+)$/);
   const productMatch = hash.match(/^#product\/(.+)$/);
 
@@ -44,17 +48,14 @@ export default function App() {
   const productId = productMatch ? decodeURIComponent(productMatch[1]) : '';
 
   useEffect(() => {
-    if (isAuthenticated && isAuth) {
-      window.location.hash = '#profile';
-    }
-    if (!isAuthenticated && isProfile) {
-      window.location.hash = '#auth';
-    }
+    if (isAuthenticated && isAuth) window.location.hash = '#profile';
+    if (!isAuthenticated && isProfile) window.location.hash = '#auth';
   }, [isAuthenticated, isAuth, isProfile]);
 
   const showHeader = !isAuth;
   const showAccount = isAuth || isProfile;
-  const showMain = !isAbout && !showAccount && !isSearch && !isProduct;
+  const showMain =
+    !isAbout && !showAccount && !isSearch && !isProduct && !isCart && !isFavorites;
 
   return (
     <div style={{ minHeight: '100vh', background: '#1a1a1a' }}>
@@ -86,6 +87,22 @@ export default function App() {
         <RemoteBoundary name="product">
           <Suspense fallback={<RemoteFallback name="product" />}>
             <ProductPage oskuId={productId} />
+          </Suspense>
+        </RemoteBoundary>
+      )}
+
+      {isCart && (
+        <RemoteBoundary name="cart">
+          <Suspense fallback={<RemoteFallback name="cart" />}>
+            <CartPage />
+          </Suspense>
+        </RemoteBoundary>
+      )}
+
+      {isFavorites && (
+        <RemoteBoundary name="cart">
+          <Suspense fallback={<RemoteFallback name="favorites" />}>
+            <FavoritesPage />
           </Suspense>
         </RemoteBoundary>
       )}
