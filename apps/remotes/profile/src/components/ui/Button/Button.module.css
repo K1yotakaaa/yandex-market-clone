@@ -1,0 +1,120 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: var(--pf-radius-control);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--pf-focus);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+/* sizes */
+.s {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.m {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+.l {
+  height: 52px;
+  padding: 0 24px;
+  font-size: 16px;
+}
+
+.iconOnly {
+  padding: 0;
+  border-radius: 50%;
+}
+
+.iconOnly.s {
+  width: 36px;
+}
+
+.iconOnly.m {
+  width: 44px;
+}
+
+.iconOnly.l {
+  width: 52px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* variants */
+.primary {
+  background: var(--pf-accent);
+  color: var(--pf-on-accent);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--pf-accent-hover);
+}
+
+.primary:disabled {
+  background: var(--pf-fill);
+  color: var(--pf-text-tertiary);
+  opacity: 1;
+}
+
+.secondary {
+  background: var(--pf-fill);
+  color: var(--pf-text);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--pf-fill-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--pf-text);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--pf-fill);
+}
+
+.danger {
+  background: var(--pf-danger);
+  color: #fff;
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--pf-danger-hover);
+}

@@ -1,0 +1,155 @@
+.nav {
+  padding: 8px;
+  border-radius: var(--pf-radius-card);
+  background: var(--pf-surface);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--pf-radius-control);
+  background: transparent;
+  color: var(--pf-text);
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.item:hover {
+  background: var(--pf-fill);
+}
+
+.item:focus-visible {
+  outline: 2px solid var(--pf-focus);
+  outline-offset: -2px;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--pf-text-secondary);
+}
+
+.label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.badge {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 11px;
+  background: var(--pf-accent);
+  color: var(--pf-on-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--pf-text-tertiary);
+}
+
+.active {
+  background: var(--pf-fill);
+  font-weight: 600;
+}
+
+.active .icon {
+  color: var(--pf-accent);
+}
+
+.logoutItem {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--pf-border);
+}
+
+.logout {
+  color: var(--pf-text-secondary);
+}
+
+.logout:hover {
+  color: var(--pf-danger);
+}
+
+.logout:hover .icon {
+  color: var(--pf-danger);
+}
+
+/* Mobile & tablet: horizontal scrollable chips */
+@media (max-width: 1023px) {
+  .nav {
+    margin: 0 calc(var(--pf-gutter) * -1);
+    padding: 0 var(--pf-gutter);
+    border-radius: 0;
+    background: transparent;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+  }
+
+  .item {
+    height: 40px;
+    padding: 0 16px 0 12px;
+    gap: 8px;
+    border-radius: 20px;
+    background: var(--pf-surface);
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .active {
+    background: var(--pf-inverse);
+    color: var(--pf-on-inverse);
+  }
+
+  .active .icon {
+    color: var(--pf-on-inverse);
+  }
+
+  .item:hover:not(.active) {
+    background: var(--pf-fill-hover);
+  }
+
+  .label {
+    overflow: visible;
+  }
+
+  .chevron {
+    display: none;
+  }
+
+  .logoutItem {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}

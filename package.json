@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently -n shell,header,main,search,product,auth,cart,about -c blue,magenta,cyan,yellow,white,green,magenta,gray \"npm:dev:shell\" \"npm:dev:header\" \"npm:dev:main\" \"npm:dev:search\" \"npm:dev:product\" \"npm:dev:auth\" \"npm:dev:cart\" \"npm:dev:about\"",
+    "dev": "concurrently -n shell,header,main,search,product,auth,cart,profile,about -c blue,magenta,cyan,yellow,white,green,magenta,red,gray \"npm:dev:shell\" \"npm:dev:header\" \"npm:dev:main\" \"npm:dev:search\" \"npm:dev:product\" \"npm:dev:auth\" \"npm:dev:cart\" \"npm:dev:profile\" \"npm:dev:about\"",
     "dev:shell": "npm run dev -w @marketplace/shell",
     "dev:header": "npm run dev -w @marketplace/header",
     "dev:main": "npm run dev -w @marketplace/main",
@@ -16,6 +16,7 @@
     "dev:product": "npm run dev -w @marketplace/product",
     "dev:auth": "npm run dev -w @marketplace/auth",
     "dev:cart": "npm run dev -w @marketplace/cart",
+    "dev:profile": "npm run dev -w @marketplace/profile",
     "dev:about": "npm run dev -w @marketplace/about",
     "typecheck": "npm run typecheck -ws --if-present",
     "build": "npm run build -ws --if-present",

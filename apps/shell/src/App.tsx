@@ -7,6 +7,7 @@ const MainPage = lazy(() => import('main/MainPage'));
 const SearchPage = lazy(() => import('search/SearchPage'));
 const ProductPage = lazy(() => import('product/ProductPage'));
 const AuthPage = lazy(() => import('auth/AuthPage'));
+const ProfileApp = lazy(() => import('profile/ProfileApp'));
 const AboutPage = lazy(() => import('about/AboutPage'));
 const CartPage = lazy(() => import('cart/CartPage'));
 const FavoritesPage = lazy(() => import('cart/FavoritesPage'));
@@ -53,9 +54,9 @@ export default function App() {
   }, [isAuthenticated, isAuth, isProfile]);
 
   const showHeader = !isAuth;
-  const showAccount = isAuth || isProfile;
+  const showProfile = isProfile && isAuthenticated;
   const showMain =
-    !isAbout && !showAccount && !isSearch && !isProduct && !isCart && !isFavorites;
+    !isAbout && !isAuth && !isProfile && !isSearch && !isProduct && !isCart && !isFavorites;
 
   return (
     <div style={{ minHeight: '100vh', background: '#1a1a1a' }}>
@@ -107,10 +108,18 @@ export default function App() {
         </RemoteBoundary>
       )}
 
-      {showAccount && (
+      {isAuth && (
         <RemoteBoundary name="auth">
           <Suspense fallback={<RemoteFallback name="auth" />}>
             <AuthPage />
+          </Suspense>
+        </RemoteBoundary>
+      )}
+
+      {showProfile && (
+        <RemoteBoundary name="profile">
+          <Suspense fallback={<RemoteFallback name="profile" />}>
+            <ProfileApp />
           </Suspense>
         </RemoteBoundary>
       )}
