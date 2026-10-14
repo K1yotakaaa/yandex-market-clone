@@ -40,6 +40,12 @@ declare module 'cart/FavoritesPage' {
   export default FavoritesPage;
 }
 
+declare module 'profile/ProfileApp' {
+  import type { ComponentType } from 'react';
+  const ProfileApp: ComponentType;
+  export default ProfileApp;
+}
+
 declare module 'about/AboutPage' {
   import type { ComponentType } from 'react';
   const AboutPage: ComponentType;

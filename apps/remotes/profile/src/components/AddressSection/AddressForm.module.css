@@ -1,0 +1,146 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.legend {
+  margin-bottom: 10px;
+  padding: 0;
+  color: var(--pf-text-secondary);
+  font-size: 14px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--pf-radius-control);
+  background: var(--pf-fill);
+}
+
+.segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  border-radius: 9px;
+  color: var(--pf-text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.segment:hover {
+  color: var(--pf-text);
+}
+
+.segmentActive {
+  background: var(--pf-raised);
+  color: var(--pf-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.segment:has(:focus-visible) {
+  outline: 2px solid var(--pf-focus);
+  outline-offset: 1px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.span2 {
+  grid-column: 1 / -1;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.checkboxDisabled {
+  cursor: default;
+}
+
+.checkboxHint {
+  display: block;
+  color: var(--pf-text-secondary);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.checkboxInput {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  border: 2px solid var(--pf-border-strong);
+  border-radius: 6px;
+  background: var(--pf-surface) center / 14px no-repeat;
+  cursor: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.checkboxInput:checked {
+  border-color: var(--pf-accent);
+  background-color: var(--pf-accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2321201f' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+}
+
+.checkboxInput:disabled {
+  opacity: 0.6;
+}
+
+.checkboxInput:focus-visible {
+  outline: 2px solid var(--pf-focus);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.actions > * {
+  flex: 1;
+}
+
+@media (min-width: 600px) {
+  .actions > * {
+    flex: 0 0 auto;
+  }
+}

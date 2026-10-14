@@ -1,0 +1,116 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 16px 16px 18px 20px;
+  border-radius: var(--pf-radius-inner);
+  background: var(--pf-fill);
+  box-shadow: inset 0 0 0 2px transparent;
+  transition: box-shadow 0.15s ease;
+}
+
+.isDefault {
+  box-shadow: inset 0 0 0 2px var(--pf-accent);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+  margin-bottom: 4px;
+}
+
+.typeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--pf-surface);
+  color: var(--pf-text);
+}
+
+.isDefault .typeIcon {
+  background: var(--pf-accent);
+  color: var(--pf-on-accent);
+}
+
+.type {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.badge {
+  padding: 3px 8px;
+  border-radius: 8px;
+  background: var(--pf-accent-soft);
+  color: var(--pf-accent);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+  margin-right: -6px;
+}
+
+.actions > :global(button):hover {
+  background: var(--pf-fill-hover);
+}
+
+.delete:hover {
+  color: var(--pf-danger);
+}
+
+.line {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+  overflow-wrap: anywhere;
+}
+
+.details {
+  margin: 0;
+  color: var(--pf-text-secondary);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.comment {
+  margin: 2px 0 0;
+  color: var(--pf-text-secondary);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+
+.makeDefault {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--pf-link);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.makeDefault:hover {
+  text-decoration: underline;
+}
+
+.makeDefault:focus-visible {
+  outline: 2px solid var(--pf-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

@@ -1,0 +1,86 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  min-width: 0;
+}
+
+.item > * {
+  flex: 1;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 12px;
+  text-align: center;
+}
+
+.emptyIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--pf-accent-soft);
+  color: var(--pf-accent);
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.emptyText {
+  margin: 6px 0 20px;
+  color: var(--pf-text-secondary);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.confirmText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.confirmNote {
+  display: block;
+  margin-top: 8px;
+  color: var(--pf-text-secondary);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.confirmActions {
+  display: flex;
+  gap: 12px;
+}
+
+.confirmActions > * {
+  flex: 1;
+}
+
+@media (max-width: 599px) {
+  .addLabel {
+    display: none;
+  }
+}

@@ -1,0 +1,154 @@
+/*
+ * Design tokens live on the remote's root (not :root) so nothing leaks into the shell.
+ * Palette follows the rest of the marketplace: #1a1a1a canvas, #262626 cards,
+ * #fce000 primary action with dark text.
+ */
+.root {
+  --pf-bg: #1a1a1a;
+  --pf-surface: #262626;
+  --pf-raised: #3a3a3a;
+  --pf-fill: #303030;
+  --pf-fill-hover: #383838;
+  --pf-border: #363636;
+  --pf-border-strong: #5a5a5a;
+
+  --pf-text: #ffffff;
+  --pf-text-secondary: #b5b5b5;
+  --pf-text-tertiary: #7a7a7a;
+  --pf-link: #fce000;
+
+  --pf-accent: #fce000;
+  --pf-accent-hover: #ffe933;
+  --pf-accent-soft: rgba(252, 224, 0, 0.14);
+  --pf-on-accent: #1a1a1a;
+  --pf-focus: #fce000;
+
+  --pf-inverse: #ffffff;
+  --pf-on-inverse: #1a1a1a;
+
+  --pf-danger: #ff5a52;
+  --pf-danger-hover: #ff7770;
+  --pf-danger-fill: rgba(255, 90, 82, 0.1);
+  --pf-success: #2fb35a;
+
+  --pf-radius-card: 20px;
+  --pf-radius-inner: 16px;
+  --pf-radius-control: 12px;
+  --pf-shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.55);
+
+  --pf-gutter: 24px;
+
+  min-height: 100vh;
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Resets use zero specificity so component classes always win, regardless of CSS chunk order. */
+:where(.root) :where(*, *::before, *::after) {
+  box-sizing: border-box;
+}
+
+:where(.root) :where(button, input, textarea, select) {
+  font: inherit;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px var(--pf-gutter) 64px;
+}
+
+.pageHeader {
+  margin-bottom: 24px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+}
+
+.pageSubtitle {
+  margin: 4px 0 0;
+  color: var(--pf-text-secondary);
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.aside {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .aside {
+    position: static;
+  }
+
+  .main {
+    gap: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 599px) {
+  .root {
+    --pf-gutter: 12px;
+    --pf-radius-card: 20px;
+    --pf-radius-inner: 16px;
+  }
+
+  .container {
+    padding: 16px var(--pf-gutter) 40px;
+  }
+
+  .pageHeader {
+    margin-bottom: 16px;
+    padding: 0 4px;
+  }
+
+  .pageTitle {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .layout,
+  .main,
+  .aside {
+    gap: 12px;
+  }
+}
